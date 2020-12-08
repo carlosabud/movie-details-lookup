@@ -1,5 +1,9 @@
 # MovieDetailsLookup
 
+## Small personal app to browse movie catalog based on user criteria and display movie details.
+
+Current version: 0.1
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
 
 ## Development server
