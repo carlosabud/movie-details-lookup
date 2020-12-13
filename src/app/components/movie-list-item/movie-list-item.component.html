@@ -1,3 +1,19 @@
-<div class="movie-container">
-  <pre>{{ movie | json }}</pre>
-</div>
+<mat-card class="example-card" [routerLink]="['../details', movie?.id]">
+  <mat-card-header>
+    <mat-card-title>{{ movie?.title }}</mat-card-title>
+
+    <mat-card-subtitle>Rating: {{ movie?.vote_average }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    mat-card-image
+    [src]="posterBaseUrl + movie.poster_path"
+    [alt]="movie.title + ' poster'"
+  />
+  <mat-card-content>
+    <p class="card-content">{{ movie?.overview || "No synopsis provided." }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-stroked-button>LIKE</button>
+    <button mat-stroked-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/movie.model';
+import { BASE_POSTER_URL } from 'src/app/utils/constants';
 
 @Component({
   selector: 'app-movie-list-item',
@@ -8,6 +8,8 @@ import { Movie } from 'src/app/models/movie.model';
 })
 export class MovieListItemComponent implements OnInit {
   @Input() movie;
+
+  posterBaseUrl: string = BASE_POSTER_URL;
 
   constructor() {}
 

@@ -4,6 +4,7 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
+  HttpHeaders,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -24,12 +25,13 @@ export class AuthInterceptor implements HttpInterceptor {
 
     if (token) {
       req = request.clone({
-        setHeaders: {
-          authorization: `Bearer ${token}`,
-        },
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json;charset=utf-8',
+          Authorization: `Bearer ${token}`,
+        }),
       });
-    }
 
-    return next.handle(req);
+      return next.handle(req);
+    }
   }
 }
